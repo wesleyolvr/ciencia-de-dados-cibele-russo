@@ -1,0 +1,116 @@
+site_name: Ciência de Dados com a Profa. Cibele Russo
+site_description: >-
+  Trilhas gratuitas de estudo a partir das aulas da Profa. Dra. Cibele Russo
+  (ICMC/USP). Material derivado para estudo, sem uso comercial.
+site_url: https://wesleyolvr.github.io/ciencia-de-dados-cibele-russo/
+
+repo_url: https://github.com/wesleyolvr/ciencia-de-dados-cibele-russo
+repo_name: wesleyolvr/ciencia-de-dados-cibele-russo
+edit_uri: ""
+
+docs_dir: docs
+
+copyright: >-
+  Conteúdo original da
+  <a href="https://www.youtube.com/@CibeleRussoUSP">Profa. Dra. Cibele Russo (ICMC/USP)</a>.
+  Material derivado sob
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br">CC BY-NC-SA 4.0</a>.
+  Organização do repositório: Alexander Braz
+  (<a href="https://github.com/vonealex">@vonealex</a>).
+  Uso não comercial.
+
+exclude_docs: |
+  includes/
+
+hooks:
+  - hooks/prepare_docs.py
+
+validation:
+  links:
+    not_found: warn
+    anchors: warn
+
+theme:
+  name: material
+  language: pt-BR
+  font: false
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Modo escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - toc.follow
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - tables
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.snippets:
+      base_path: [docs]
+      auto_append: [includes/creditos.md]
+      check_paths: true
+  - pymdownx.arithmatex:
+      generic: true
+      smart_dollar: false
+      inline_syntax:
+        - round
+      block_syntax:
+        - square
+        - begin
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search:
+      lang: pt
+
+nav:
+  - Início: index.md
+  - Trilhas:
+      - Fundamentos de Ciência de Dados: materias/fundamentos-de-ciencia-de-dados/index.md
+      - Estatística e Inferência: materias/estatistica-e-inferencia/index.md
+      - Visualização e Exploração de Dados: materias/visualizacao-e-exploracao-de-dados/index.md
+      - Modelos de Regressão: materias/modelos-de-regressao/index.md
+      - Análise Multivariada: materias/analise-multivariada/index.md
+      - Machine Learning: materias/machine-learning/index.md
+      - Gestão da Qualidade: materias/gestao-da-qualidade/index.md
+      - Estatística e Otimização (CDPO): materias/estatistica-e-otimizacao-cdpo/index.md
+  - Catálogo: catalogo/index.md
+  - Aprofundar: aprofundar.md
+  - Sobre: sobre.md

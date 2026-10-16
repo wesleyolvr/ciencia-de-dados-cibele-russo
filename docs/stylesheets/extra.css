@@ -1,0 +1,22 @@
+.md-typeset img {
+  height: auto;
+  max-width: 100%;
+}
+
+.md-typeset .grid.cards {
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 40rem) {
+  .md-typeset .grid.cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 30rem) {
+  .md-typeset p img {
+    display: block;
+    margin: 0.5rem 0;
+    width: 100% !important;
+  }
+}
